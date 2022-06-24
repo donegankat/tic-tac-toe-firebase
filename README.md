@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# React Tic Tac Toe Game with Firebase Deployment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is just a simple lil' Tic Tac Toe game built using React and which is configured to be deployed and hosted to a Firebase web project.
 
-## Available Scripts
+You can find the deployed app live here: https://tictactoe-76767.web.app/
 
-In the project directory, you can run:
+# Build & Deploy
 
-### `npm start`
+To build the web app and deploy it to Firebase, open a command line, navigate to the app's root directory, and then follow the instructions below.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Firebase Tools installed via `npm install -g firebase-tools`
+- Authenticated with Firebase via `firebase login`
 
-### `npm test`
+## Building the App for Production & Deploying to Firebase Using the Existing Configuration Settings
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run the following commands from the app's root directory:
+`npm run build`
+`firebase deploy`
 
-### `npm run build`
+## Changing the Firebase Hosting Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To change where the Firebase app will be deployed and hosted, use one of the following approaches:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Method #1: Reinitialize Firebase from Scratch
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Run `firebase init` in the app's root directory
+2. Follow the rest of the instructions here: https://medium.com/geekculture/deploy-react-app-to-firebase-43c9651c2417
 
-### `npm run eject`
+### Method #2: Edit the Current Settings
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Edit the [Firebase config settings](./src/firebaseConfig.tsx)
+2. Edit the [Firebase project name](.firebaserc)
