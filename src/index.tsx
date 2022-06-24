@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCQpsiNSefRsmL6HNyxLnyFAcDLZYnQUQM',
+  authDomain: 'tictactoe-76767.firebaseapp.com',
+  projectId: 'tictactoe-76767',
+  storageBucket: 'tictactoe-76767.appspot.com',
+  messagingSenderId: '1054590196186',
+  appId: '1:1054590196186:web:fc08c4aee617e35f6508e3',
+  measurementId: 'G-BHK6DPLZV9',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <App />
